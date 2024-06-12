@@ -194,7 +194,9 @@
             </div>
             <!-- Sidebar          -->
             @include('includes.checkout_sitebar', $cart)
-            <h6>{{__('Pay with')}} :</h6>
+            
+        </div>
+        <h6>{{__('Pay with')}} :</h6>
         <div class="row mt-4">
           <div class="col-12">
             <div class="payment-methods">
@@ -225,7 +227,6 @@
 
             </div>
           </div>
-        </div>
         </div>
     </div>
 @endsection
