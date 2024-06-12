@@ -109,7 +109,7 @@
                     <img class="" src="{{asset('assets/images/'.$gateway->photo)}}" alt="{{$gateway->name}}" title="{{$gateway->name}}">
                     <p>{{$gateway->name}}</p>
                 </a>
-              </div>
+              </div> 
               @endif
 
               @endforeach
