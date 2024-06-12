@@ -8396,7 +8396,7 @@ screen and (-ms-high-contrast:none) {
 }
 
 .payment-methods .single-payment-method {
-    width: 33.33%;
+    width: 100%;
     padding-left: 10px;
     padding-right: 10px;
     margin-bottom: 20px
