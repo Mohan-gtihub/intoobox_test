@@ -94,6 +94,38 @@
 
       </div>
       @include('includes.checkout_sitebar',$cart)
+      <h6>{{__('Pay with')}} :</h6>
+        <div class="row mt-4">
+          <div class="col-12">
+            <div class="payment-methods">
+              @php
+                  $gateways = DB::table('payment_settings')->whereStatus(1)->get();
+              @endphp
+              @foreach ($gateways as $gateway)
+              @if (PriceHelper::CheckDigitalPaymentGateway())
+              @if ($gateway->unique_keyword != 'cod')
+              <div class="single-payment-method">
+                <a class="text-decoration-none " href="#" data-bs-toggle="modal" data-bs-target="#{{$gateway->unique_keyword}}">
+                    <img class="" src="{{asset('assets/images/'.$gateway->photo)}}" alt="{{$gateway->name}}" title="{{$gateway->name}}">
+                    <p>{{$gateway->name}}</p>
+                </a>
+              </div>
+              @endif
+
+              @else
+              <div class="single-payment-method">
+                <a class="text-decoration-none" href="#" data-bs-toggle="modal" data-bs-target="#{{$gateway->unique_keyword}}">
+                    <img class="" src="{{asset('assets/images/'.$gateway->photo)}}" alt="{{$gateway->name}}" title="{{$gateway->name}}">
+                    <p>{{$gateway->name}}</p>
+                </a>
+              </div>
+              @endif
+
+              @endforeach
+
+            </div>
+          </div>
+        </div>
     </div>
   </div>
 @endsection
